@@ -1,83 +1,6 @@
 package com.example.finalproject;
 
-import androidx.annotation.Nullable```java
-// Add a color picker for text color
-private void applyTextStyle(Paint paint) {
-    int textColor = getColor();
-    paint.setColor(textColor);
-    paint.setTextSize(getTextSize());
-    paint.setShadowLayer(1f, 0f, 1f, Color.BLACK);
-}```java
-// Add a color picker for text color
-private void applyTextStyle(Paint paint) {
-    int textColor = getColor();
-    paint.setColor(textColor);
-    paint.setTextSize(getTextSize());
-    paint.setShadowLayer(1f, 0f, 1f, Color.BLACK);
-}
-
-// Add a method to get the text color from user input
-private int getColor() {
-    // Implement a color picker or get the color from a predefined list
-    // For simplicity, let's use a predefined list
-    String[] colors = {"White", "Black", "Red", "Green", "Blue"};
-    String selectedColor = "White"; // Get the selected color from user input
-    switch (selectedColor) {
-        case "White":
-            return Color.WHITE;
-        case "Black":
-            return Color.BLACK;
-        case "Red":
-            return Color.RED;
-        case "Green":
-            return Color.GREEN;
-        case "Blue":
-            return Color.BLUE;
-        default:
-            return Color.WHITE; // default color
-    }
-}
-
-// Add a method to get the text color from user input
-private int getColor() {
-    // Implement a color picker or get the color from a predefined list
-    // For simplicity, let's use a predefined list
-    String[] colors = {"White", "Black", "Red", "Green", "Blue"};
-    String selectedColor = "White"; // Get the selected color from user input
-    switch (selectedColor) {
-        case "White":
-            return Color.WHITE;
-        case "Black":
-            return Color.BLACK;
-        case "Red":
-            return Color.RED;
-        case "Green":
-            return Color.GREEN;
-        case "Blue":
-            return Color.BLUE;
-        default:
-            return Color.WHITE; // aasd
-    }
-}
-
-// Add a method to get the text size from user input
-private float getTextSize() {
-    // Implement a size picker or get the size from a predefined list
-    // For simplicity, let's use a predefined list
-    String[] sizes = {"Small", "Medium", "Large"};
-    String selectedSize = "Medium"; // Get the selected size from user input
-    switch (selectedSize) {
-        case "Small":
-            return 50;
-        case "Medium":
-            return 100;
-        case "Large":
-            return 150;
-        default:
-            return 100;
-    }
-}
-```;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Intent;
@@ -202,9 +125,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void applyTextStyle(Paint paint) {
-        paint.setColor(Color.WHITE); // Change color based on user selection
-        paint.setTextSize(100); // Change size based on user input
+        paint.setColor(getColor()); // Get color based on user input
+        paint.setTextSize(getTextSize()); // Get size based on user input
         paint.setShadowLayer(1f, 0f, 1f, Color.BLACK);
+    }
+
+    private int getColor() {
+        // Simplified color selection
+        String selectedColor = "White"; // Replace with user input
+        switch (selectedColor) {
+            case "White":
+                return Color.WHITE;
+            case "Black":
+                return Color.BLACK;
+            case "Red":
+                return Color.RED;
+            case "Green":
+                return Color.GREEN;
+            case "Blue":
+                return Color.BLUE;
+            default:
+                return Color.WHITE; // Default color
+        }
+    }
+
+    private float getTextSize() {
+        // Simplified text size selection
+        String selectedSize = "Medium"; // Replace with user input
+        switch (selectedSize) {
+            case "Small":
+                return 50;
+            case "Medium":
+                return 100;
+            case "Large":
+                return 150;
+            default:
+                return 100; // Default size
+        }
     }
 
     private void saveMeme(Bitmap bitmap) {
